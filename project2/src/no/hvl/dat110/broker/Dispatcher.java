@@ -152,7 +152,7 @@ public class Dispatcher extends Stopable {
 		Collection<ClientSession> clients = storage.getSessions();
 
 		for (ClientSession client : clients){
-			if (storage.subscriptions.get(msg.getTopic()).contains(msg.getUser())){
+			if (storage.subscriptions.get(msg.getTopic()).contains(client.getUser())){
 				MessageUtils.send(client.getConnection(), msg);
 			}
 		}

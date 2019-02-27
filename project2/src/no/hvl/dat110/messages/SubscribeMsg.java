@@ -7,7 +7,7 @@ public class SubscribeMsg extends Message {
 
     private String subscribe;
 
-    public SubscribeMsg(String subscribe, String user){
+    public SubscribeMsg(String user, String subscribe){
         super(MessageType.SUBSCRIBE, user);
         this.subscribe = subscribe;
     }
