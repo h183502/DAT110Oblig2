@@ -57,6 +57,38 @@ public class Storage {
 		bufferedMessages.put(id, msg);
 	}
 
+	public ConcurrentHashMap<String, Set<String>> getSubscriptions() {
+		return subscriptions;
+	}
+
+	public void setSubscriptions(ConcurrentHashMap<String, Set<String>> subscriptions) {
+		this.subscriptions = subscriptions;
+	}
+
+	public ConcurrentHashMap<String, ClientSession> getClients() {
+		return clients;
+	}
+
+	public void setClients(ConcurrentHashMap<String, ClientSession> clients) {
+		this.clients = clients;
+	}
+
+	public ConcurrentHashMap<String, Set<String>> getDisconnected() {
+		return disconnected;
+	}
+
+	public void setDisconnected(ConcurrentHashMap<String, Set<String>> disconnected) {
+		this.disconnected = disconnected;
+	}
+
+	public ConcurrentHashMap<String, Message> getBufferedMessages() {
+		return bufferedMessages;
+	}
+
+	public void setBufferedMessages(ConcurrentHashMap<String, Message> bufferedMessages) {
+		this.bufferedMessages = bufferedMessages;
+	}
+
 	public void addClientSession(String user, Connection connection) {
 
 		// TODO: add corresponding client session to the storage
